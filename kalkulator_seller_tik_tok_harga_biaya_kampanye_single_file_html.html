@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kalkulator Seller TikTok – Harga, Biaya & Kampanye</title>
+  <style>
+    :root{--b:#e2e8f0;--bg:#f8fafc;--fg:#0f172a;--muted:#64748b;--pri:#2563eb;--danger:#dc2626;--ok:#16a34a}
+    *{box-sizing:border-box}
+    body{font-family:Inter,system-ui,Arial,Helvetica,sans-serif;margin:16px;background:var(--bg);color:var(--fg)}
+    h1{font-size:1.5rem;margin:.2rem 0 .6rem}
+    .sub{color:var(--muted);margin:.2rem 0 1rem}
+    .grid{display:grid;gap:10px}
+    .g2{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .g3{grid-template-columns:repeat(3,minmax(0,1fr))}
+    .g4{grid-template-columns:repeat(4,minmax(0,1fr))}
+    .card{background:#fff;border:1px solid var(--b);border-radius:12px;padding:12px;margin-bottom:12px}
+    label{font-size:.9rem;color:var(--muted)}
+    input,select{width:100%;padding:8px;border:1px solid var(--b);border-radius:8px}
+    table{width:100%;border-collapse:collapse;background:#fff}
+    th,td{padding:8px;border:1px solid var(--b);text-align:left}
+    th{background:#f1f5f9}
+    .right{text-align:right}
+    .btn{padding:8px 12px;border:1px solid var(--b);border-radius:8px;background:#fff;cursor:pointer}
+    .btn-primary{background:var(--pri);border-color:var(--pri);color:#fff}
+    .kpi{display:grid;gap:10px;grid-template-columns:repeat(5,minmax(0,1fr))}
+    .kpi .item{background:#fff;border:1px solid var(--b);border-radius:12px;padding:10px}
+    .kpi .item .t{font-size:.8rem;color:var(--muted)}
+    .kpi .item .v{font-weight:700}
+    .muted{color:var(--muted);font-size:.85rem}
+    .ok{color:var(--ok)} .bad{color:var(--danger)}
+    @media (max-width:1100px){.kpi{grid-template-columns:repeat(3,minmax(0,1fr))}}
+    @media (max-width:760px){.g2{grid-template-columns:1fr}.kpi{grid-template-columns:1fr}}
+    .row{display:flex;gap:8px;flex-wrap:wrap;align-items:flex-end}
+    .small{font-size:.8rem}
+  </style>
+</head>
+<body>
+  <h1>📈 Kalkulator Seller TikTok – Harga, Biaya & Kampanye</h1>
+  <p class="sub">Masukkan <b>Harga Jual</b>, <b>HPP</b>, dan unsur biaya: <b>Biaya TikTok</b>, <b>Biaya Operasional</b>, <b>Biaya Pemrosesan</b>, <b>Biaya Iklan</b>, <b>Komisi Affiliate</b>. Di bawahnya ada <b>Kalkulator Kampanye/Subsidi</b> (misal subsidi Rp5.000 ditanggung 30:70) dengan opsi input <b>% atau Rp</b>.</p>
+
+  <!-- BAGIAN HARGA & BIAYA INTI -->
+  <div class="card">
+    <h3 style="margin:.2rem 0 .6rem">1) Harga & Biaya Inti</h3>
+    <div class="grid g2">
+      <div>
+        <label>Harga Jual (sebelum diskon/subsidi)</label>
+        <input id="price" type="number" placeholder="60000" />
+      </div>
+      <div>
+        <label>HPP / Modal (Rp)</label>
+        <input id="hpp" type="number" placeholder="35000" />
+      </div>
+    </div>
+    <div class="grid g2" style="margin-top:10px">
+      <div class="row" style="align-items:center">
+        <div style="flex:1">
+          <label>Biaya TikTok</label>
+          <input id="fee_tiktok_val" type="number" placeholder="2" />
+        </div>
+        <div style="width:140px">
+          <label class="small">Tipe</label>
+          <select id="fee_tiktok_type"><option value="pct">% dari Harga</option><option value="nom">Rp</option></select>
+        </div>
+      </div>
+      <div class="row" style="align-items:center">
+        <div style="flex:1">
+          <label>Biaya Operasional</label>
+          <input id="fee_ops_val" type="number" placeholder="0" />
+        </div>
+        <div style="width:140px">
+          <label class="small">Tipe</label>
+          <select id="fee_ops_type"><option value="pct">% dari Harga</option><option value="nom">Rp</option></select>
+        </div>
+      </div>
+      <div class="row" style="align-items:center">
+        <div style="flex:1">
+          <label>Biaya Pemrosesan (payment/handling)</label>
+          <input id="fee_proc_val" type="number" placeholder="1" />
+        </div>
+        <div style="width:140px">
+          <label class="small">Tipe</label>
+          <select id="fee_proc_type"><option value="pct">% dari Harga</option><option value="nom">Rp</option></select>
+        </div>
+      </div>
+      <div class="row" style="align-items:center">
+        <div style="flex:1">
+          <label>Biaya Iklan per Order</label>
+          <input id="fee_ads_val" type="number" placeholder="0" />
+        </div>
+        <div style="width:140px">
+          <label class="small">Tipe</label>
+          <select id="fee_ads_type"><option value="pct">% dari Harga</option><option value="nom">Rp</option></select>
+        </div>
+      </div>
+      <div class="row" style="align-items:center">
+        <div style="flex:1">
+          <label>Komisi Affiliate</label>
+          <input id="fee_aff_val" type="number" placeholder="10" />
+        </div>
+        <div style="width:140px">
+          <label class="small">Tipe</label>
+          <select id="fee_aff_type"><option value="pct">% dari Harga</option><option value="nom">Rp</option></select>
+        </div>
+      </div>
+    </div>
+    <div class="row" style="margin-top:10px">
+      <button class="btn btn-primary" onclick="calcCore()">Hitung Biaya Inti</button>
+      <button class="btn" onclick="resetCore()">Reset</button>
+    </div>
+  </div>
+
+  <!-- KPI HASIL INTI -->
+  <div class="kpi" id="kpiCore">
+    <div class="item"><div class="t">Harga Dibayar (tanpa subsidi)</div><div class="v" id="core_price_after">Rp 0</div></div>
+    <div class="item"><div class="t">Total Biaya (tanpa subsidi)</div><div class="v" id="core_cost">Rp 0</div></div>
+    <div class="item"><div class="t">Profit / Unit</div><div class="v" id="core_profit">Rp 0</div></div>
+    <div class="item"><div class="t">Margin</div><div class="v" id="core_margin">0%</div></div>
+    <div class="item"><div class="t">Rata biaya/fee</div><div class="v" id="core_fee_detail">–</div></div>
+  </div>
+
+  <!-- RINCIAN INTI -->
+  <div class="card">
+    <h3 style="margin:.2rem 0 .6rem">Rincian Biaya Inti</h3>
+    <table>
+      <thead><tr><th>Komponen</th><th class="right">Nominal</th></tr></thead>
+      <tbody id="core_detail"></tbody>
+    </table>
+  </div>
+
+  <!-- KAMPANYE / SUBSIDI DISKON -->
+  <div class="card">
+    <h3 style="margin:.2rem 0 .6rem">2) Kalkulator Kampanye / Subsidi Diskon</h3>
+    <div class="grid g2">
+      <div>
+        <label>Mode Nilai Subsidi</label>
+        <select id="sub_mode" onchange="toggleSubInputs()">
+          <option value="pct">Persentase dari Harga</option>
+          <option value="nom">Nominal (Rp)</option>
+        </select>
+      </div>
+      <div>
+        <label id="sub_val_label">Subsidi (%)</label>
+        <input id="sub_val" type="number" placeholder="10" />
+      </div>
+    </div>
+
+    <div class="grid g2" style="margin-top:8px">
+      <div>
+        <label>Mode Pembagian Penanggung</label>
+        <select id="split_mode" onchange="toggleSplitInputs()">
+          <option value="pct">Persentase (harus 100%)</option>
+          <option value="nom">Nominal (harus = total subsidi)</option>
+        </select>
+      </div>
+      <div class="row" id="split_pct_box">
+        <div style="flex:1">
+          <label>Seller (%)</label>
+          <input id="split_seller_pct" type="number" placeholder="30" />
+        </div>
+        <div style="flex:1">
+          <label>Platform/TikTok (%)</label>
+          <input id="split_platform_pct" type="number" placeholder="70" />
+        </div>
+      </div>
+      <div class="row" id="split_nom_box" style="display:none">
+        <div style="flex:1">
+          <label>Seller (Rp)</label>
+          <input id="split_seller_nom" type="number" placeholder="1500" />
+        </div>
+        <div style="flex:1">
+          <label>Platform/TikTok (Rp)</label>
+          <input id="split_platform_nom" type="number" placeholder="3500" />
+        </div>
+      </div>
+    </div>
+
+    <div class="row" style="margin-top:10px">
+      <button class="btn btn-primary" onclick="calcCampaign()">Hitung Kampanye</button>
+      <span class="muted">Contoh: subsidi Rp5.000 dengan split 30:70 → masukkan mode nominal (5000) atau mode % (misal 8% dari harga) lalu bagi 30% seller, 70% platform.</span>
+    </div>
+  </div>
+
+  <!-- KPI KAMPANYE -->
+  <div class="kpi" id="kpiCamp">
+    <div class="item"><div class="t">Subsidi Total</div><div class="v" id="camp_sub_total">Rp 0</div></div>
+    <div class="item"><div class="t">Subsidi Seller</div><div class="v" id="camp_sub_seller">Rp 0</div></div>
+    <div class="item"><div class="t">Subsidi Platform</div><div class="v" id="camp_sub_platform">Rp 0</div></div>
+    <div class="item"><div class="t">Harga Dibayar Customer</div><div class="v" id="camp_price_after">Rp 0</div></div>
+    <div class="item"><div class="t">Penerimaan Seller (setelah biaya+subsidi)</div><div class="v" id="camp_net_receive">Rp 0</div></div>
+  </div>
+
+  <!-- RINCIAN KAMPANYE -->
+  <div class="card">
+    <h3 style="margin:.2rem 0 .6rem">Rincian Perhitungan Kampanye</h3>
+    <table>
+      <thead><tr><th>Komponen</th><th class="right">Nominal</th></tr></thead>
+      <tbody id="camp_detail"></tbody>
+    </table>
+  </div>
+
+  <script>
+    // ===== Helpers & State =====
+    const LS_KEY = 'tiktok_seller_calc_core_v2';
+    const el = (id)=>document.getElementById(id);
+    const currency = (n)=> 'Rp ' + (Number(n)||0).toLocaleString('id-ID');
+
+    function saveState(){
+      const data = {
+        price:+el('price').value||0, hpp:+el('hpp').value||0,
+        fee_tiktok:{type:el('fee_tiktok_type').value,val:+el('fee_tiktok_val').value||0},
+        fee_ops:{type:el('fee_ops_type').value,val:+el('fee_ops_val').value||0},
+        fee_proc:{type:el('fee_proc_type').value,val:+el('fee_proc_val').value||0},
+        fee_ads:{type:el('fee_ads_type').value,val:+el('fee_ads_val').value||0},
+        fee_aff:{type:el('fee_aff_type').value,val:+el('fee_aff_val').value||0},
+        sub_mode:el('sub_mode').value, sub_val:+el('sub_val').value||0,
+        split_mode:el('split_mode').value,
+        split_seller_pct:+el('split_seller_pct').value||0,
+        split_platform_pct:+el('split_platform_pct').value||0,
+        split_seller_nom:+el('split_seller_nom').value||0,
+        split_platform_nom:+el('split_platform_nom').value||0
+      };
+      localStorage.setItem(LS_KEY, JSON.stringify(data));
+    }
+
+    function loadState(){
+      try{ const d=JSON.parse(localStorage.getItem(LS_KEY)||'{}'); if(!d) return;
+        if(d.price!=null) el('price').value=d.price; if(d.hpp!=null) el('hpp').value=d.hpp;
+        if(d.fee_tiktok){ el('fee_tiktok_type').value=d.fee_tiktok.type; el('fee_tiktok_val').value=d.fee_tiktok.val; }
+        if(d.fee_ops){ el('fee_ops_type').value=d.fee_ops.type; el('fee_ops_val').value=d.fee_ops.val; }
+        if(d.fee_proc){ el('fee_proc_type').value=d.fee_proc.type; el('fee_proc_val').value=d.fee_proc.val; }
+        if(d.fee_ads){ el('fee_ads_type').value=d.fee_ads.type; el('fee_ads_val').value=d.fee_ads.val; }
+        if(d.fee_aff){ el('fee_aff_type').value=d.fee_aff.type; el('fee_aff_val').value=d.fee_aff.val; }
+        if(d.sub_mode){ el('sub_mode').value=d.sub_mode; }
+        if(d.sub_val!=null){ el('sub_val').value=d.sub_val; }
+        if(d.split_mode){ el('split_mode').value=d.split_mode; }
+        if(d.split_seller_pct!=null){ el('split_seller_pct').value=d.split_seller_pct; }
+        if(d.split_platform_pct!=null){ el('split_platform_pct').value=d.split_platform_pct; }
+        if(d.split_seller_nom!=null){ el('split_seller_nom').value=d.split_seller_nom; }
+        if(d.split_platform_nom!=null){ el('split_platform_nom').value=d.split_platform_nom; }
+      }catch(e){}
+      toggleSubInputs(); toggleSplitInputs();
+    }
+
+    function applyType(val, type, base){ return type==='pct' ? base*(Number(val)||0)/100 : (Number(val)||0); }
+
+    // ===== CORE (tanpa subsidi) =====
+    function calcCore(){
+      const price = +el('price').value||0;
+      const hpp = +el('hpp').value||0;
+      const fee_tiktok = applyType(el('fee_tiktok_val').value, el('fee_tiktok_type').value, price);
+      const fee_ops = applyType(el('fee_ops_val').value, el('fee_ops_type').value, price);
+      const fee_proc = applyType(el('fee_proc_val').value, el('fee_proc_type').value, price);
+      const fee_ads = applyType(el('fee_ads_val').value, el('fee_ads_type').value, price);
+      const fee_aff = applyType(el('fee_aff_val').value, el('fee_aff_type').value, price);
+
+      const totalFee = fee_tiktok + fee_ops + fee_proc + fee_ads + fee_aff;
+      const priceAfter = price; // tanpa subsidi, customer bayar penuh
+      const profit = priceAfter - (hpp + totalFee);
+      const margin = priceAfter>0 ? profit/priceAfter : 0;
+
+      el('core_price_after').textContent = currency(priceAfter);
+      el('core_cost').textContent = currency(hpp+totalFee);
+      el('core_profit').textContent = currency(profit);
+      el('core_margin').textContent = (margin*100).toFixed(2)+'%';
+      el('core_fee_detail').textContent = [fee_tiktok,fee_ops,fee_proc,fee_ads,fee_aff].map(n=>currency(n)).join(' · ');
+
+      el('core_detail').innerHTML = `
+        <tr><td>HPP</td><td class='right'>${currency(hpp)}</td></tr>
+        <tr><td>Biaya TikTok</td><td class='right'>${currency(fee_tiktok)}</td></tr>
+        <tr><td>Biaya Operasional</td><td class='right'>${currency(fee_ops)}</td></tr>
+        <tr><td>Biaya Pemrosesan</td><td class='right'>${currency(fee_proc)}</td></tr>
+        <tr><td>Biaya Iklan</td><td class='right'>${currency(fee_ads)}</td></tr>
+        <tr><td>Komisi Affiliate</td><td class='right'>${currency(fee_aff)}</td></tr>
+        <tr><td><b>Total Biaya</b></td><td class='right'><b>${currency(hpp+totalFee)}</b></td></tr>
+        <tr><td><b>Profit (tanpa subsidi)</b></td><td class='right'><b>${currency(profit)}</b></td></tr>`;
+
+      saveState();
+    }
+
+    // ===== CAMPAIGN =====
+    function toggleSubInputs(){
+      el('sub_val_label').textContent = el('sub_mode').value==='pct' ? 'Subsidi (%)' : 'Subsidi (Rp)';
+    }
+    function toggleSplitInputs(){
+      const isPct = el('split_mode').value==='pct';
+      el('split_pct_box').style.display = isPct ? 'flex' : 'none';
+      el('split_nom_box').style.display = isPct ? 'none' : 'flex';
+    }
+
+    function calcCampaign(){
+      const price = +el('price').value||0;
+      const hpp = +el('hpp').value||0;
+      // biaya inti (bergantung pada harga sebelum diskon—umum terjadi di marketplace)
+      const tiktok = applyType(el('fee_tiktok_val').value, el('fee_tiktok_type').value, price);
+      const ops   = applyType(el('fee_ops_val').value, el('fee_ops_type').value, price);
+      const proc  = applyType(el('fee_proc_val').value, el('fee_proc_type').value, price);
+      const ads   = applyType(el('fee_ads_val').value, el('fee_ads_type').value, price);
+      const aff   = applyType(el('fee_aff_val').value, el('fee_aff_type').value, price);
+
+      // total subsidi
+      const sub_mode = el('sub_mode').value; const sub_val = +el('sub_val').value||0;
+      const sub_total = (sub_mode==='pct') ? (price*sub_val/100) : sub_val;
+      const priceAfter = Math.max(0, price - sub_total);
+
+      // pembagian penanggung
+      const split_mode = el('split_mode').value;
+      let sub_seller=0, sub_platform=0;
+      if(split_mode==='pct'){
+        const ps = +el('split_seller_pct').value||0; const pp = +el('split_platform_pct').value||0;
+        const sum = ps+pp; if(sum!==100){ alert('Persentase harus total 100%'); return; }
+        sub_seller = sub_total * (ps/100); sub_platform = sub_total * (pp/100);
+      } else {
+        sub_seller = +el('split_seller_nom').value||0; sub_platform = +el('split_platform_nom').value||0;
+        const sum = sub_seller + sub_platform; if(Math.abs(sum - sub_total)>0.5){ alert('Nominal seller+platform harus sama dengan total subsidi'); return; }
+      }
+
+      // net penerimaan seller: uang dari customer (priceAfter) dikurangi HPP & semua biaya seller (fee² + porsi subsidi seller)
+      const totalFees = tiktok+ops+proc+ads+aff;
+      const net_receive = priceAfter - (hpp + totalFees + sub_seller);
+      const profit = net_receive; // sama definisi di sini
+      const margin = priceAfter>0 ? profit/priceAfter : 0;
+
+      el('camp_sub_total').textContent = currency(sub_total);
+      el('camp_sub_seller').textContent = currency(sub_seller);
+      el('camp_sub_platform').textContent = currency(sub_platform);
+      el('camp_price_after').textContent = currency(priceAfter);
+      el('camp_net_receive').textContent = currency(net_receive);
+
+      el('camp_detail').innerHTML = `
+        <tr><td>Harga Jual Awal</td><td class='right'>${currency(price)}</td></tr>
+        <tr><td>Subsidi Total</td><td class='right'>${currency(sub_total)}</td></tr>
+        <tr><td>Harga Dibayar Customer</td><td class='right'><b>${currency(priceAfter)}</b></td></tr>
+        <tr><td>HPP</td><td class='right'>${currency(hpp)}</td></tr>
+        <tr><td>Biaya TikTok</td><td class='right'>${currency(tiktok)}</td></tr>
+        <tr><td>Biaya Operasional</td><td class='right'>${currency(ops)}</td></tr>
+        <tr><td>Biaya Pemrosesan</td><td class='right'>${currency(proc)}</td></tr>
+        <tr><td>Biaya Iklan</td><td class='right'>${currency(ads)}</td></tr>
+        <tr><td>Komisi Affiliate</td><td class='right'>${currency(aff)}</td></tr>
+        <tr><td>Porsi Subsidi Seller</td><td class='right'>${currency(sub_seller)}</td></tr>
+        <tr><td><b>Penerimaan Seller (Netto)</b></td><td class='right'><b>${currency(net_receive)}</b></td></tr>
+        <tr><td>Margin terhadap Harga Dibayar</td><td class='right'><b>${(margin*100).toFixed(2)}%</b></td></tr>`;
+
+      saveState();
+    }
+
+    function resetCore(){ ['price','hpp','fee_tiktok_val','fee_ops_val','fee_proc_val','fee_ads_val','fee_aff_val','sub_val','split_seller_pct','split_platform_pct','split_seller_nom','split_platform_nom'].forEach(id=>el(id).value=''); ['fee_tiktok_type','fee_ops_type','fee_proc_type','fee_ads_type','fee_aff_type','sub_mode','split_mode'].forEach(id=>el(id).value='pct'); toggleSubInputs(); toggleSplitInputs(); calcCore(); }
+
+    // Autosave on change
+    document.addEventListener('input', (e)=>{
+      const ids = ['price','hpp','fee_tiktok_val','fee_ops_val','fee_proc_val','fee_ads_val','fee_aff_val','sub_val','split_seller_pct','split_platform_pct','split_seller_nom','split_platform_nom'];
+      const sels = ['fee_tiktok_type','fee_ops_type','fee_proc_type','fee_ads_type','fee_aff_type','sub_mode','split_mode'];
+      if(ids.includes(e.target.id) || sels.includes(e.target.id)) saveState();
+    });
+
+    // Init
+    loadState();
+    calcCore();
+  </script>
+</body>
+</html>
